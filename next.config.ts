@@ -7,11 +7,7 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
-  ...(isGithubPages
-    ? {
-        basePath: `/${repo}`,
-      }
-    : {}),
+  basePath: "/Taqnia-AI",
 };
 
 export default nextConfig;

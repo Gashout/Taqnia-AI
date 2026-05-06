@@ -4,6 +4,8 @@ import React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { useTheme } from "@/components/theme-provider";
+import { GoldButton } from "@/components/ui/gold-button";
+import { whatsappLink } from "@/lib/contact";
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -75,7 +77,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="leading-none">
             <div className="text-[15px] font-semibold tracking-tight text-[color:var(--color-foreground)]">
-              Taqnia AI
+              Taqnia AI SA
             </div>
             <div className="mt-1 text-[12px] font-semibold tracking-wide text-[color:var(--color-gold)]">
               تقنية
@@ -115,10 +117,19 @@ export function Navbar() {
           <ToggleButton active={locale === "en"} onClick={() => setLocale("en")}>
             EN
           </ToggleButton>
+          <div className="ml-2 hidden sm:block">
+            <GoldButton
+              href={whatsappLink(t.footer.whatsapp)}
+              target="_blank"
+              rel="noreferrer"
+              className="h-9 px-4 py-0 text-[11px] font-bold rounded-xl tracking-tight"
+            >
+              {t.nav.bookDemo}
+            </GoldButton>
+          </div>
         </div>
       </div>
       <div className="h-px w-full bg-[linear-gradient(to_right,transparent,rgba(201,168,76,0.18),transparent)]" />
     </div>
   );
 }
-

@@ -18,7 +18,7 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "Taqnia AI | تقنية",
+  title: "Taqnia AI SA | تقنية",
   description: "Custom AI agents for Saudi businesses.",
 };
 
@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       data-locale="ar"
-      data-theme="dark"
+      data-theme="light"
       suppressHydrationWarning
       className={`${inter.variable} ${tajawal.variable} h-full antialiased`}
     >

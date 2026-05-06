@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/sections/hero";
 import { IndustriesSection } from "@/components/sections/industries";
 import { WhatWeBuildSection } from "@/components/sections/what-we-build";
 import { WhatWeDoSection } from "@/components/sections/what-we-do";
+import { TestimonialsSection } from "@/components/sections/testimonials";
 import { SectionDivider } from "@/components/ui/section-divider";
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
         <DeliverablesSection />
         <SectionDivider />
         <IndustriesSection />
+        <SectionDivider />
+        <TestimonialsSection />
         <SectionDivider />
         <FaqSection />
         <SectionDivider />

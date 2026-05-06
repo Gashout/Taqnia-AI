@@ -1,9 +1,9 @@
 "use client";
 
-import { Heart, Mail, MessageCircle } from "lucide-react";
+import { Heart, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 import { Container } from "@/components/ui/container";
-import { whatsappLink, normalizeWhatsAppNumber } from "@/lib/contact";
+import { LinkedinIcon } from "@/components/ui/icons";
 
 export function Footer() {
   const { t, locale } = useLanguage();
@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:items-start">
           <div>
             <div className="text-[15px] font-semibold tracking-tight text-[color:var(--color-foreground)]">
-              Taqnia AI
+              Taqnia AI SA
             </div>
             <div className="mt-1 text-[12px] font-semibold tracking-wide text-[color:var(--color-gold)]">
               تقنية
@@ -50,28 +50,28 @@ export function Footer() {
 
           <div>
             <div className="text-[12px] font-semibold tracking-wide text-[color:var(--color-muted-2)]">
-              Contact
+              {t.footer.labels.contact}
             </div>
             <div className="mt-4 space-y-3">
+              {/* Phone */}
               <a
                 className="group flex items-center gap-3 rounded-2xl bg-[color:var(--color-card)] px-4 py-3 shadow-[0_0_0_1px_rgba(201,168,76,0.08)] transition-shadow hover:shadow-[0_0_0_1px_rgba(201,168,76,0.18),0_0_34px_rgba(201,168,76,0.08)]"
-                href={whatsappLink(t.footer.whatsapp)}
-                target="_blank"
-                rel="noreferrer"
+                href={`tel:${t.footer.phone}`}
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--color-gold-soft)] shadow-[0_0_0_1px_rgba(201,168,76,0.16)]">
-                  <MessageCircle className="h-4 w-4 text-[color:var(--color-gold)]" />
+                  <Phone className="h-4 w-4 text-[color:var(--color-gold)]" />
                 </span>
                 <div className="leading-tight">
                   <div className="text-[13px] font-semibold text-[color:var(--color-foreground)]">
-                    WhatsApp
+                    {t.footer.labels.phone}
                   </div>
                   <div className="mt-1 text-[12px] text-[color:var(--color-muted)]">
-                    +{normalizeWhatsAppNumber(t.footer.whatsapp)}
+                    {t.footer.phone}
                   </div>
                 </div>
               </a>
 
+              {/* Email */}
               <a
                 className="group flex items-center gap-3 rounded-2xl bg-[color:var(--color-card)] px-4 py-3 shadow-[0_0_0_1px_rgba(201,168,76,0.08)] transition-shadow hover:shadow-[0_0_0_1px_rgba(201,168,76,0.18),0_0_34px_rgba(201,168,76,0.08)]"
                 href={`mailto:${t.footer.email}`}
@@ -81,10 +81,30 @@ export function Footer() {
                 </span>
                 <div className="leading-tight">
                   <div className="text-[13px] font-semibold text-[color:var(--color-foreground)]">
-                    Email
+                    {t.footer.labels.email}
                   </div>
                   <div className="mt-1 text-[12px] text-[color:var(--color-muted)]">
                     {t.footer.email}
+                  </div>
+                </div>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                className="group flex items-center gap-3 rounded-2xl bg-[color:var(--color-card)] px-4 py-3 shadow-[0_0_0_1px_rgba(201,168,76,0.08)] transition-shadow hover:shadow-[0_0_0_1px_rgba(201,168,76,0.18),0_0_34px_rgba(201,168,76,0.08)]"
+                href={t.footer.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--color-gold-soft)] shadow-[0_0_0_1px_rgba(201,168,76,0.16)]">
+                  <LinkedinIcon className="h-4 w-4 text-[color:var(--color-gold)]" />
+                </span>
+                <div className="leading-tight">
+                  <div className="text-[13px] font-semibold text-[color:var(--color-foreground)]">
+                    {t.footer.labels.linkedin}
+                  </div>
+                  <div className="mt-1 text-[12px] text-[color:var(--color-muted)] text-xs truncate max-w-[150px]">
+                    taqnia-ai
                   </div>
                 </div>
               </a>
@@ -102,4 +122,3 @@ export function Footer() {
     </footer>
   );
 }
-
